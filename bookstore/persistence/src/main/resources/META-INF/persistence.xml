@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+	
+	<persistence-unit name="TUni">
+		<description>Implementation of persistence level for Bookstore Project</description>
+		
+		<!-- persistence provider -->
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+		<!-- JNDI name of the datasource -->
+		<jta-data-source></jta-data-source>
+		
+		<!-- JPA entities must be registered here -->
+		<class>com.tsystems.bookstore.persistence.entity.Book</class>
+		<class>com.tsystems.bookstore.persistence.entity.Author</class>
+		<class>com.tsystems.bookstore.persistence.entity.Book2author</class>
+		<class>com.tsystems.bookstore.persistence.entity.Book2category</class>
+		<class>com.tsystems.bookstore.persistence.entity.Category</class>
+		<class>com.tsystems.bookstore.persistence.entity.Book2genre</class>
+		<class>com.tsystems.bookstore.persistence.entity.Genre</class>
+		<class>com.tsystems.bookstore.persistence.entity.Bookreview</class>
+		<class>com.tsystems.bookstore.persistence.entity.Usr</class>
+		<class>com.tsystems.bookstore.persistence.entity.Stockitem</class>
+		<class>com.tsystems.bookstore.persistence.entity.Warehouse</class>
+
+	    <properties>
+	      <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+	      <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/bookstore"/>
+	      <property name="hibernate.connection.username" value="root"/>
+	      <property name="hibernate.connection.password" value="admin"/>
+	      <property name="hibernate.connection.autocommit" value="false"/>        
+	      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>      
+	      <property name="hibernate.default_schema" value="bookstore"/>
+	      
+	      <!--property name="current_session_context_class" value="thread"/ -->
+	      
+	      <property name="hibernate.show_sql" value="true"/>
+	      <property name="hibernate.format_sql" value="true"/>
+	      <property name="hibernate.use_sql_comments" value="true"/>  
+	      <property name="hibernate.id.new_generator_mappings" value="true"/>      
+	    </properties>
+	</persistence-unit>
+	
+	<persistence-unit name="Simplest" transaction-type="RESOURCE_LOCAL">
+		<provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+        <jta-data-source>jdbc/jpaDemoDB</jta-data-source>
+
+		<!-- JPA entities must be registered here -->
+		<class>org.meri.jpa.simplest.entity.Person</class>
+                
+		<!-- other properties -->
+		<properties>
+			<!-- Do not use in production, this will generate a lot of output. -->
+			<!--  <property name="openjpa.Log" value="SQL=TRACE"/>  -->
+		</properties>
+
+	</persistence-unit>
+	
+</persistence>
