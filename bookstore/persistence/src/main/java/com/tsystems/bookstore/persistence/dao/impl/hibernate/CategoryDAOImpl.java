@@ -1,4 +1,4 @@
-package com.tsystems.bookstore.persistence.dao.impl;
+package com.tsystems.bookstore.persistence.dao.impl.hibernate;
 
 
 

@@ -5,7 +5,7 @@ import java.util.List;
 import org.hibernate.HibernateException;
 
 import com.tsystems.bookstore.persistence.dao.CategoryDAO;
-import com.tsystems.bookstore.persistence.dao.impl.CategoryDAOImpl;
+import com.tsystems.bookstore.persistence.dao.impl.hibernate.CategoryDAOImpl;
 import com.tsystems.bookstore.persistence.entity.Category;
 import com.tsystems.bookstore.persistence.utils.HibernateUtils;
 

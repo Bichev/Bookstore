@@ -8,7 +8,7 @@ public interface AuthorDAO extends GenericDAO<Author, BigDecimal> {
 
 	public Author findByFirstname(String firstname);
 
-	public void deleteById(BigDecimal id);
+	public void deleteAuthorById(int id);
 
 	public void changeLastname(Author author, String lastname);
 
