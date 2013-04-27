@@ -34,6 +34,12 @@ public class Book implements java.io.Serializable {
 		this.id = id;
 		this.isbn = isbn;
 	}
+	
+	public Book(int id, String name, String isbn) {
+		this.id = id;
+		this.title = name;
+		this.isbn = isbn;
+	}
 
 	public Book(int id, String title, String isbn,
 			Set<Book2category> book2categories, Set<Book2author> book2authors,
